@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="moviecatApp">
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="portada.css">
@@ -19,15 +19,9 @@
 	</header>	
 	<div class="content">
 		<section>
-			<article> 
-				<img src="http://ia.media-imdb.com/images/M/MV5BMTMxNDQ5MTA5MF5BMl5BanBnXkFtZTcwMzUyMDUwMg@@._V1_SX300.jpg">
-			</article>
-			<article>
-				<img src="http://ia.media-imdb.com/images/M/MV5BMTM2MTM4MzY2OV5BMl5BanBnXkFtZTcwNjQ3NzI4NA@@._V1_SX320.jpg">
-			</article>
-			<article>
-				<img src=http://ia.media-imdb.com/images/M/MV5BMTk2NTE1NTE0M15BMl5BanBnXkFtZTgwNjY4NTYxMTE@._V1_SX300.jpg>
-			</article>
+			<article ng-repeat="movie in movies"> 
+				{{movie}}
+			</article>			
 		</section>
 		<aside></aside>
 	</div>	
@@ -58,6 +52,7 @@
 		<p>Copyright @2017</p>
 	</footer>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.js"></script>	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.js"></script>
+	<script type="text/javascript" src="app.js"></script>	
 </body>
 </html>
