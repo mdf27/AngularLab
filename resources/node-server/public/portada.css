@@ -6,6 +6,9 @@ body {
 	background: #e3e2dd; 
 	font: 13px Arial,sans-serif;
 	margin: 0px;
+	min-width: 960px;
+    min-height: 420px;
+    overflow: visible;
 }
 ul {
 	list-style: none;
@@ -29,9 +32,9 @@ ul li {
 
 footer {
 	clear: both;
-	position: relative;
 	border-top: 1px solid #CCC;
 	height: 10%;
+	bottom: 0;
 }
 
 header {
@@ -45,7 +48,7 @@ footer p {
 	width: 10%;
 	margin: 0px;
 	float: right;
-	top: 70%;
+	top: 70%;	
 }
 footer ul li {
 	display: block;
@@ -54,6 +57,7 @@ footer ul li {
 	width: 100%;
 	height: 80%;
 	background: #EDEDEC;
+	overflow: scroll;
 }
 section {
 	height: 100%;

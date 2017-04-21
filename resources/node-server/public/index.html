@@ -17,10 +17,10 @@
 			</ul>
 		</nav>	
 	</header>	
-	<div class="content">
+	<div class="content" ng-controller="maincontroller">
 		<section>
-			<article ng-repeat="movie in movies"> 
-				{{movie}}
+			<article ng-repeat="movie in movies">
+				<img ng-src="{{movie.poster}}" alt="{{movie.name}}" /> 
 			</article>			
 		</section>
 		<aside></aside>

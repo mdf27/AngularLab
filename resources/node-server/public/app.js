@@ -2,9 +2,8 @@ var moviecatApp = angular.module('moviecatApp',[]);
 
 moviecatApp.factory('movieFactory', function($http){
   var factory = {};
-  factory.getAll = function(callback){
-    $http.get('/api/movies').success(callback);
-    conslole.log("$scope.movies");
+  factory.getAll = function(data){
+    $http.get('/api/movies').then(data);    
   };  
   return factory;
 });
@@ -13,7 +12,9 @@ moviecatApp.controller('maincontroller', ['$scope', 'movieFactory', maincontroll
 
 function maincontroller($scope, movieFactory) {
 
-	$scope.movies = movieFactory.getAll();
+	movieFactory.getAll(function(result){
+    $scope.movies = result.data;
+  });
 
     $scope.addCity = function() {
     	/*var newCity = {
