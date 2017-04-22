@@ -1,14 +1,9 @@
-html{
+html, body {
 	height: 100%;
-}
-body {
-	height: 100%;
+	width: 100%;
 	background: #e3e2dd; 
 	font: 13px Arial,sans-serif;
 	margin: 0px;
-	min-width: 960px;
-    min-height: 420px;
-    overflow: visible;
 }
 ul {
 	list-style: none;
@@ -22,19 +17,20 @@ ul li {
 	position: relative;
 	text-align: center;
 }
-.container {
+.content {
 	width: 100%;
 	height: 10%;
 	position: relative;
 	margin: 0px;
 	clear: both;
+	bottom: 1px;
 }
 
 footer {
 	clear: both;
 	border-top: 1px solid #CCC;
-	height: 10%;
-	bottom: 0;
+	height: 100px;
+	position: relative;
 }
 
 header {
@@ -53,11 +49,11 @@ footer p {
 footer ul li {
 	display: block;
 }
-.content {
+.container {
 	width: 100%;
-	height: 80%;
+	min-height: 100%;
 	background: #EDEDEC;
-	overflow: scroll;
+	margin-bottom: -100px;
 }
 section {
 	height: 100%;
@@ -68,10 +64,11 @@ section {
 
 }
 article {
-	height: 100%;
-	width: 33%;
 	float: left;
-	border-right: 1px solid #CCC
+	border-right: 1px solid #CCC;
+	height: 530px;
+	padding-right: 0px;
+	padding-left: 0px;
 }
 
 nav {
@@ -87,7 +84,7 @@ nav ul{
 	top: 70%;
 }
 img { 
- 	max-height: 100%; 
- 	max-width: 100%; 
+ 	height: 100%; 
+ 	width: 100%; 
  	
 }

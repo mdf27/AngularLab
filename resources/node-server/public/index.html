@@ -2,11 +2,12 @@
 <html ng-app="moviecatApp">
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="portada.css">
 	<title>Portada</title>
 </head>
 <body>		
-	<header class="container">
+	<header class="content">
 		<nav>
 			<ul>
 				<li>Home |</li>
@@ -17,37 +18,23 @@
 			</ul>
 		</nav>	
 	</header>	
-	<div class="content" ng-controller="maincontroller">
-		<section>
-			<article ng-repeat="movie in movies">
-				<img ng-src="{{movie.poster}}" alt="{{movie.name}}" /> 
+	<div class="container" ng-controller="maincontroller">
+		<section class="row">
+			<article ng-repeat="movie in movies" class="col-md-5" >
+				<img ng-src="{{movie.poster}}" alt="{{movie.name}}"/> 
 			</article>			
 		</section>
 		<aside></aside>
 	</div>	
 	<footer>
-		<div class="container">
-			<div class="col">
+		<div class="content">
+			<div >
 				<ul>
 					<li>Youtube</li>
 					<li>facebook</li>
 					<li>twitter</li>
 				</ul>
-			</div>	
-			<div class="col">
-				<ul>
-					<li>Youtube</li>
-					<li>facebook</li>
-					<li>twitter</li>
-				</ul>
-			</div>	
-			<div class="col">
-				<ul>
-					<li>Youtube</li>
-					<li>facebook</li>
-					<li>twitter</li>
-				</ul>
-			</div>	
+			</div>		
 		</div>	
 		<p>Copyright @2017</p>
 	</footer>
