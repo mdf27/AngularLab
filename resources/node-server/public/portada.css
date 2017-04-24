@@ -19,7 +19,7 @@ ul li {
 }
 .content {
 	width: 100%;
-	height: 10%;
+	height: 50px;
 	position: relative;
 	margin: 0px;
 	clear: both;
@@ -29,7 +29,7 @@ ul li {
 footer {
 	clear: both;
 	border-top: 1px solid #CCC;
-	height: 100px;
+	height: 70px;
 	position: relative;
 }
 
@@ -53,7 +53,7 @@ footer ul li {
 	width: 100%;
 	min-height: 100%;
 	background: #EDEDEC;
-	margin-bottom: -100px;
+	margin-bottom: -70px;
 }
 section {
 	height: 100%;
@@ -85,6 +85,11 @@ nav ul{
 }
 img { 
  	height: 100%; 
- 	width: 100%; 
- 	
+ 	width: 100%;  	
+}
+
+span {
+	font-weight: bold;
+	float: left;	
+	clear: both;
 }

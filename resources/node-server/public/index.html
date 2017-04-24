@@ -18,28 +18,20 @@
 			</ul>
 		</nav>	
 	</header>	
-	<div class="container" ng-controller="maincontroller">
-		<section class="row">
-			<article ng-repeat="movie in movies" class="col-md-5" >
-				<img ng-src="{{movie.poster}}" alt="{{movie.name}}"/> 
-			</article>			
-		</section>
-		<aside></aside>
-	</div>	
+	<div class="container" ng-view>
+	</div>
 	<footer>
-		<div class="content">
-			<div >
-				<ul>
-					<li>Youtube</li>
-					<li>facebook</li>
-					<li>twitter</li>
-				</ul>
-			</div>		
-		</div>	
-		<p>Copyright @2017</p>
+
+			<ul>
+				<li>Youtube</li>
+				<li>facebook</li>
+				<li>twitter</li>
+			</ul>
+			<p>Copyright @2017</p>	
+	
 	</footer>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular-route.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>
 	<script type="text/javascript" src="app.js"></script>	
 </body>
 </html>

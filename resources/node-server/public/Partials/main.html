@@ -1,0 +1,8 @@
+<section class="row">
+	<article ng-repeat="movie in movies" class="col-md-5" >
+	<a href="#movieDetails" ng-click="currentMovie(movie)">
+		<img ng-src="{{movie.poster}}" alt="{{movie.title}}"/> 
+	</a>	
+	</article>			
+</section>
+<aside></aside>
