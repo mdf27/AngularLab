@@ -6,7 +6,7 @@ moviecatApp.config(function($routeProvider){
 		controller: 'maincontroller',
 		templateUrl:'Partials/main.html'		
 	})
-	.when('/movieDetails',{
+	.when('/movieDetails/:movieId',{
 		controller: 'movieDetailsController',
 		templateUrl:'Partials/movieDetails.html'		
 	})
@@ -16,39 +16,32 @@ moviecatApp.config(function($routeProvider){
 })
 
 moviecatApp.factory('movieFactory', function($http){
-  var factory = {
-  	currentMovie : ''
-  };
+  var factory = {};
   factory.getAll = function(data){
     $http.get('/api/movies').then(data);    
   }; 
-  factory.movieDetails = function(movie, data){
-  	$http.get('/api/movies/'+movie.id)
+  factory.movieDetails = function(movieID, data){
+  	$http.get('/api/movies/'+movieID)
   	.then(data);
   };  
   
   return factory;
 });
 
-function maincontroller($scope, movieFactory) {
-
+function maincontroller($scope, $routeParams, movieFactory) {
+  $scope.$routeParams = $routeParams;
 	movieFactory.getAll(function(result){
     	$scope.movies = result.data;
-  	});
-
-  	$scope.currentMovie = function(movie){
-  		movieFactory.currentMovie = movie;		
-	}
-	
+  	});	
 }
 
-moviecatApp.controller('maincontroller', ['$scope', 'movieFactory', maincontroller]);
+moviecatApp.controller('maincontroller', ['$scope', '$routeParams', 'movieFactory', maincontroller]);
 
-moviecatApp.controller('movieDetailsController', ['$scope', 'movieFactory', movieDetailsController]);
+moviecatApp.controller('movieDetailsController', ['$scope', '$routeParams', 'movieFactory', movieDetailsController]);
 
-function movieDetailsController($scope, movieFactory) {
-
-	movieFactory.movieDetails(movieFactory.currentMovie, function(result){
+function movieDetailsController($scope, $routeParams, movieFactory) {
+  $scope.routeParams = $routeParams;
+	movieFactory.movieDetails($routeParams.movieId, function(result){
 			$scope.movieDetails = result.data;
 	});	
 

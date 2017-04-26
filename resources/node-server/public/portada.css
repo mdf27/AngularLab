@@ -2,7 +2,7 @@ html, body {
 	height: 100%;
 	width: 100%;
 	background: #e3e2dd; 
-	font: 13px Arial,sans-serif;
+	font-family: 13px "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
 	margin: 0px;
 }
 ul {
@@ -81,7 +81,7 @@ nav {
 }
 
 nav ul{
-	top: 70%;
+	top: 65%;
 }
 img { 
  	height: 100%; 
