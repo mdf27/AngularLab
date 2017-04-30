@@ -9,6 +9,7 @@ ul {
 	list-style: none;
 	display: inline;
 	position: relative;
+	padding-left: 10px;
 }
 
 ul li {
@@ -47,7 +48,8 @@ footer p {
 	top: 70%;	
 }
 footer ul li {
-	display: block;
+	margin:  auto;
+	display: inline-block;
 }
 .container {
 	width: 100%;
@@ -73,6 +75,7 @@ article {
 
 nav {
 	height: 100%;
+	padding-top: 15px;
 }
 
 .col {
@@ -92,4 +95,14 @@ span {
 	font-weight: bold;
 	float: left;	
 	clear: both;
+}
+.follow {
+	height: 40px;
+	width: 40px;
+	padding-top: 5px;
+}
+.search-input{
+	margin-right: 10px;
+	float: right;
+	padding-top: 16px;
 }

@@ -8,27 +8,30 @@
 </head>
 <body>		
 	<header class="content">
-		<nav>
-			<ul>
-				<li>Home |</li>
-				<li>Movies |</li>
-				<li>Help |</li>
-				<li>About Us |</li>
-				<li>contact</li>
-			</ul>
-		</nav>	
+		<div class="row">
+			<nav class="col-md-3">
+				<ul>
+					<li>Home |</li>
+					<li>Movies |</li>
+					<li>Help |</li>
+					<li>About Us |</li>
+					<li>contact</li>
+				</ul>
+			</nav>	
+			<div class="col-xs-2 search-input">
+				<input type="text" name="search" class="form-control" ng-model="searchText" placeholder="Search...">	
+			</div>	
+		</div>	
 	</header>	
 	<div class="container" ng-view>
 	</div>
 	<footer>
-
 			<ul>
-				<li>Youtube</li>
-				<li>facebook</li>
-				<li>twitter</li>
+				<li class="follow"><img src="icons/facebook.png" /></li>
+				<li class="follow"><img src="icons/twitter.png" /></li>
+				<li class="follow"><img src="icons/instagram.png" /></li>
 			</ul>
-			<p>Copyright @2017</p>	
-	
+			<p>Copyright @2017</p>		
 	</footer>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-route.js"></script>

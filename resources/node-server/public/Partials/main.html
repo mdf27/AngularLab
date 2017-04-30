@@ -1,5 +1,5 @@
 <section class="row">
-	<article ng-repeat="movie in movies" class="col-md-5" >
+	<article ng-repeat="movie in movies|filter:searchText" class="col-md-5" >
 	<a href="#movieDetails/{{movie.id}}">
 		<img ng-src="{{movie.poster}}" alt="{{movie.title}}"/> 
 	</a>	
