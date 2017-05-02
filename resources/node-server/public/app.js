@@ -4,46 +4,53 @@ moviecatApp.config(function($routeProvider){
 	$routeProvider
 	.when('/',{
 		controller: 'maincontroller',
-		templateUrl:'Partials/main.html'		
+		templateUrl:'templates/main.html'		
 	})
 	.when('/movieDetails/:movieId',{
 		controller: 'movieDetailsController',
-		templateUrl:'Partials/movieDetails.html'		
+		templateUrl:'templates/movieDetails.html'		
 	})
     .otherwise({
         redirectTo: '/'
     });
 })
 
-moviecatApp.factory('movieFactory', function($http){
-  var factory = {};
-  factory.getAll = function(data){
+moviecatApp.service('movieService', function($http){
+  var service = {};
+  service.getAll = function(data){
     $http.get('/api/movies').then(data);    
   }; 
-  factory.movieDetails = function(movieID, data){
+  service.movieDetails = function(movieID, data){
   	$http.get('/api/movies/'+movieID)
   	.then(data);
   };  
-  
-  return factory;
+  service.searchQuery = function(params, data){
+    $http.get('/api/movies?genre=Drama')
+    .then(data);
+  };
+  return service;
 });
 
-function maincontroller($scope, $routeParams, movieFactory) {
-  $scope.$routeParams = $routeParams;
-	movieFactory.getAll(function(result){
+function maincontroller($scope, movieService) {
+
+	movieService.getAll(function(result){
     	$scope.movies = result.data;
   	});	
+  $scope.searchQuery = function(){
+    movieService.searchQuery("params", function(result){
+      $scope.movies = result.data;
+    })
+  }
 }
 
-moviecatApp.controller('maincontroller', ['$scope', '$routeParams', 'movieFactory', maincontroller]);
+moviecatApp.controller('maincontroller', ['$scope', 'movieService', maincontroller]);
 
-moviecatApp.controller('movieDetailsController', ['$scope', '$routeParams', 'movieFactory', movieDetailsController]);
+moviecatApp.controller('movieDetailsController', ['$scope', '$routeParams', 'movieService', movieDetailsController]);
 
-function movieDetailsController($scope, $routeParams, movieFactory) {
+function movieDetailsController($scope, $routeParams, movieService) {
   $scope.routeParams = $routeParams;
-	movieFactory.movieDetails($routeParams.movieId, function(result){
+	movieService.movieDetails($routeParams.movieId, function(result){
 			$scope.movieDetails = result.data;
 	});	
 
 }
-

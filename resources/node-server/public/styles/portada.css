@@ -102,7 +102,12 @@ span {
 	padding-top: 5px;
 }
 .search-input{
-	margin-right: 10px;
+	padding: 0px;
+}
+a:focus:hover {
+	text-decoration: none;
+}
+#search-wrapper {
 	float: right;
 	padding-top: 16px;
 }
