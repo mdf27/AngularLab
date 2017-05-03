@@ -16,7 +16,7 @@
 .loading-0{
     -webkit-animation:bounce 1s infinite;
     -webkit-animation-delay:.1s;
-    background:#009DC6
+    background:#333;
   
 }
 .loading-1{
@@ -27,7 +27,7 @@
 .loading-2{
     -webkit-animation:bounce 1s infinite ease;
     -webkit-animation-delay:.5s;
-    background:#b62327;
+    background:#333;
 }
 @-webkit-keyframes bounce {
   0%, 100% {

@@ -1,12 +1,14 @@
 <section class="row">
-	<article class="col-md-6" >
+	<loader></loader>
+	<loader></loader>
+	<article class="col-md-6" ng-show="movieDetails">
 		<span>Title : {{movieDetails.title}}</span> 	
 		<span>Year : {{movieDetails.year}}</span> 
 		<span>Actors : {{movieDetails.actors}}</span> 
 		<span>Summary : {{movieDetails.plot}}</span> 
 		<span>Title : {{movieDetails.title}}</span> 	 
 	</article>	
-	<article class="col-md-6" data-movie>
+	<article class="col-md-6" ng-show="movieDetails">
 			<img ng-src="{{movieDetails.poster}}" alt="{{movieDetails.title}}"/> 
 	</article>
 </section>
