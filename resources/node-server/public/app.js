@@ -3,12 +3,12 @@ var moviecatApp = angular.module('moviecatApp',['ngRoute']);
 moviecatApp.config(function($routeProvider){
 	$routeProvider
 	.when('/',{
-		controller: 'maincontroller',
-		templateUrl:'templates/main.html'		
+		controller: 'homecontroller',
+		templateUrl:'pages/home/home.html'		
 	})
 	.when('/movieDetails/:movieId',{
 		controller: 'movieDetailsController',
-		templateUrl:'templates/movieDetails.html'		
+		templateUrl:'pages/movieDetails/movieDetails.html'		
 	})
     .otherwise({
         redirectTo: '/'
@@ -30,50 +30,3 @@ moviecatApp.service('movieService', function($http){
   };
   return service;
 });
-
-function maincontroller($scope, movieService) {
-
-	movieService.getAll(function(result){
-    	$scope.movies = result.data;
-  	});	
-  $scope.searchQuery = function(){
-    movieService.searchQuery("params", function(result){
-      $scope.movies = result.data;
-    })
-  }
-}
-
-moviecatApp.controller('maincontroller', ['$scope', 'movieService', maincontroller]);
-
-moviecatApp.controller('movieDetailsController', ['$scope', '$routeParams', 'movieService', movieDetailsController]);
-
-function movieDetailsController($scope, $routeParams, movieService) {
-  $scope.routeParams = $routeParams;
-	movieService.movieDetails($routeParams.movieId, function(result){
-			$scope.movieDetails = result.data;
-	});	
-
-}
-
-moviecatApp.directive('loader',['$http' ,function ($http)
-    {
-        return {
-            restrict: 'E',
-            link: function ($scope, element, attrs)
-            {
-                $scope.isLoading = function () {
-                    return $http.pendingRequests.length > 0;
-                };
-
-                $scope.$watch($scope.isLoading, function (value)
-                {
-                    if(value){
-                        $(element).show();
-                    }else{
-                        $(element).hide();
-                    }
-                });
-            },
-            templateUrl: 'templates/loader-template.html'
-        };
-}]);

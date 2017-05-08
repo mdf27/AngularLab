@@ -1,11 +1,10 @@
-
 moviecatApp.directive('loader',['$http' ,function ($http)
     {
         return {
             restrict: 'E',
             link: function ($scope, element, attrs)
             {
-                scope.isLoading = function () {
+                $scope.isLoading = function () {
                     return $http.pendingRequests.length > 0;
                 };
 
@@ -18,6 +17,6 @@ moviecatApp.directive('loader',['$http' ,function ($http)
                     }
                 });
             },
-            templateUrl: 'templates/loader-template.html'
+            templateUrl: 'components/loader/loader.directive.html'
         };
 }]);
