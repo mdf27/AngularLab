@@ -1,6 +1,6 @@
-moviecatApp.directive('loader',['$http' ,function ($http)
-    {
-        return {
+define([], function(){
+    function loader($http){
+         return {
             restrict: 'E',
             link: function ($scope, element, attrs)
             {
@@ -19,4 +19,10 @@ moviecatApp.directive('loader',['$http' ,function ($http)
             },
             templateUrl: 'components/loader/loader.directive.html'
         };
-}]);
+    }
+
+    loader.$inject=['$http'];
+
+    return loader;
+
+});

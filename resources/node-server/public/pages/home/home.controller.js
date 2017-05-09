@@ -1,14 +1,19 @@
+define([], function(){
+	function homecontroller($scope, movieService) {
 
-moviecatApp.controller('homecontroller', ['$scope', 'movieService', homecontroller]);
+	  movieService.getAll(function(result){
+	      $scope.movies = result.data;
+	    }); 
+	  $scope.searchQuery = function(){
+	    movieService.searchQuery("params", function(result){
+	      $scope.movies = result.data;
+	    })
+	  }
+	}
 
-function homecontroller($scope, movieService) {
+	homecontroller.$inject=['$scope', 'movieService'];
 
-  movieService.getAll(function(result){
-      $scope.movies = result.data;
-    }); 
-  $scope.searchQuery = function(){
-    movieService.searchQuery("params", function(result){
-      $scope.movies = result.data;
-    })
-  }
-}
+	return homecontroller;
+});
+
+

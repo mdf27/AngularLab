@@ -1,32 +1,15 @@
-var moviecatApp = angular.module('moviecatApp',['ngRoute']);
+define(['config',
+  'movieService',
+  'pages/home/home.controller',
+  'pages/movieDetails/movieDetails.controller',
+  'components/loader/loader.directive'],
 
-moviecatApp.config(function($routeProvider){
-	$routeProvider
-	.when('/',{
-		controller: 'homecontroller',
-		templateUrl:'pages/home/home.html'		
-	})
-	.when('/movieDetails/:movieId',{
-		controller: 'movieDetailsController',
-		templateUrl:'pages/movieDetails/movieDetails.html'		
-	})
-    .otherwise({
-        redirectTo: '/'
-    });
-})
+  function (config, movieService, homeController, movieDetailsController, loader){
+    var app = angular.module('moviecatApp',['ngRoute']);
+    app.config(config);
+    app.service('movieService', movieService);
+    app.controller('homecontroller', homeController);
+    app.controller('movieDetailsController', movieDetailsController);
+    app.directive('loader', loader);
+  }); 
 
-moviecatApp.service('movieService', function($http){
-  var service = {};
-  service.getAll = function(data){
-    $http.get('/api/movies').then(data);    
-  }; 
-  service.movieDetails = function(movieID, data){
-  	$http.get('/api/movies/'+movieID)
-  	.then(data);
-  };  
-  service.searchQuery = function(params, data){
-    $http.get('/api/movies?genre=Drama')
-    .then(data);
-  };
-  return service;
-});
