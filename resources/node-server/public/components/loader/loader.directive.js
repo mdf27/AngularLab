@@ -20,9 +20,6 @@ define([], function(){
             templateUrl: 'components/loader/loader.directive.html'
         };
     }
-
-    loader.$inject=['$http'];
-
     return loader;
 
 });

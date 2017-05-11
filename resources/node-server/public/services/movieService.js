@@ -14,8 +14,5 @@ define([], function(){
     };
     return service;
   }
-
-  movieService.$inject=['$http'];
-
   return movieService;
 });

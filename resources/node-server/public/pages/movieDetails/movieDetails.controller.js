@@ -6,7 +6,6 @@ define([], function(){
 		});	
 	}
 
-	movieDetailsController.$inject=['$scope', '$routeParams', 'movieService'];
 
 	return movieDetailsController;
 });

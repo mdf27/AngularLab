@@ -16,18 +16,18 @@
 .loading-0{
     -webkit-animation:bounce 1s infinite;
     -webkit-animation-delay:.1s;
-    background:#333;
+    background: #4286f2;
   
 }
 .loading-1{
     -webkit-animation:bounce 1s infinite;
     -webkit-animation-delay:.3s;
-    background:#e8b440;
+    background: #4286f5;
 }
 .loading-2{
     -webkit-animation:bounce 1s infinite ease;
     -webkit-animation-delay:.5s;
-    background:#333;
+    background: #4286f6;
 }
 @-webkit-keyframes bounce {
   0%, 100% {

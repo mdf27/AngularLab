@@ -1,5 +1,5 @@
 define(['config',
-  'movieService',
+  'services/movieService',
   'pages/home/home.controller',
   'pages/movieDetails/movieDetails.controller',
   'components/loader/loader.directive'],
@@ -12,4 +12,3 @@ define(['config',
     app.controller('movieDetailsController', movieDetailsController);
     app.directive('loader', loader);
   }); 
-

@@ -10,9 +10,6 @@ define([], function(){
 	    })
 	  }
 	}
-
-	homecontroller.$inject=['$scope', 'movieService'];
-
 	return homecontroller;
 });
 
