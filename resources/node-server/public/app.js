@@ -11,4 +11,10 @@ define(['config',
     app.controller('homecontroller', homeController);
     app.controller('movieDetailsController', movieDetailsController);
     app.directive('loader', loader);
+
+  app.filter("trustUrl", ['$sce', function ($sce) {
+          return function (recordingUrl) {
+              return $sce.trustAsResourceUrl(recordingUrl);
+          };
+      }]);
   }); 
