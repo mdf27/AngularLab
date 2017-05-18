@@ -21,10 +21,11 @@ ul li {
 .content {
 	width: 100%;
 	height: 50px;
-	position: relative;
+	position: fixed;
 	margin: 0px;
 	clear: both;
-	bottom: 1px;
+	z-index: 1000;
+	background: #e3e2dd;
 }
 
 footer {
@@ -56,6 +57,7 @@ footer ul li {
 	min-height: 100%;
 	background: #EDEDEC;
 	margin-bottom: -70px;
+	padding-top: 50px;
 }
 section {
 	height: 100%;
@@ -112,6 +114,8 @@ a:focus:hover {
 	padding-top: 16px;
 }
 .bag {
-	float: right;
+	clear: both;
+    float: right;
+    background-color: #e3e2dd;
 }
 
