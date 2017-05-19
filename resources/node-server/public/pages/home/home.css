@@ -117,5 +117,11 @@ a:focus:hover {
 	clear: both;
     float: right;
     background-color: #e3e2dd;
+    max-height: 115px;
+    overflow-y: scroll;
+}
+.btn {
+	display: block;
+	clear: both;
 }
 
