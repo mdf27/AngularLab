@@ -1,17 +1,17 @@
 define([],function(){
-	function config($routeProvider){
-		$routeProvider
-		.when('/',{
+	function config($stateProvider, $urlRouterProvider){
+		$stateProvider
+		.state('home',{
+			url:'/',
 			controller: 'homecontroller',
 			templateUrl:'pages/home/home.html'		
 		})
-		.when('/movieDetails/:movieId',{
+		.state('moviesDetail',{
+			url:'/movieDetails/:movieId',
 			controller: 'movieDetailsController',
 			templateUrl:'pages/movieDetails/movieDetails.html'		
 		})
-	    .otherwise({
-	        redirectTo: '/'
-	    });
+	    $urlRouterProvider.otherwise('/');
 	}	
   	return config;
 })

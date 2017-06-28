@@ -6,7 +6,7 @@
 		<span>Actors : {{movieDetails.actors}}</span> 
 		<span>Summary : {{movieDetails.plot}}</span> 
 		<span>Title : {{movieDetails.title}}</span> 
-		<button  type="button" class="btn btn-primary" ng-click="addToBag()">ADD TO BAG</button>	 
+		<button  type="button" class="btn btn-primary" ng-click="addToBag($event)">ADD TO BAG</button>	 
 	</article>	
 	<article class="col-md-5" ng-show="movieDetails">
 			<img ng-src="{{movieDetails.poster}}" alt="{{movieDetails.title}}"/> 

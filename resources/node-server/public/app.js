@@ -5,7 +5,7 @@ define(['config',
   'components/loader/loader.directive'],
 
   function (config, movieService, homeController, movieDetailsController, loader){
-    var app = angular.module('moviecatApp',['ngRoute']);
+    var app = angular.module('moviecatApp',['ui.router']);
     app.config(config);
     app.service('movieService', movieService);
     app.controller('homecontroller', homeController);
