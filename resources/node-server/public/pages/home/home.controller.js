@@ -11,7 +11,18 @@ define([], function(){
 	  };
 	  $scope.$on('addToBag' , function(event, data){
 	  	console.log("on fired");
-	  })
+	  });
+	  $scope.$on('mouseover', function(event, $content){
+	  	$(event.target).tooltip({
+	  		     show: {
+		        effect: "slideDown",
+		        delay: 250
+		    },
+	  		position: {
+	  			of: event
+	  		}
+	  	})
+	  });
 	}
 	return homecontroller;
 });

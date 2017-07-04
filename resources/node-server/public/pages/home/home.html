@@ -1,7 +1,7 @@
 <section class="row">
-	<article ng-repeat="movie in movies|filter:searchText" class="col-md-5">
+	<article ng-repeat="movie in movies|filter:searchText" class="col-md-5" ng-mouseover="showPlot($event, movie.plot)">
 		<a ui-sref="moviesDetail({movieId:movie.id})">
-			<img ng-src="{{movie.poster}}" alt="{{movie.title}}"/> 
+			<img ng-src="{{movie.poster}}" title="{{movie.plot}}"/> 
 		</a>	
 	</article>			
 </section>
