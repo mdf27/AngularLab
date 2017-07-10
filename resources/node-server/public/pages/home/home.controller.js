@@ -9,20 +9,13 @@ define([], function(){
 	      $scope.movies = result.data;
 	    })
 	  };
-	  $scope.$on('addToBag' , function(event, data){
-	  	console.log("on fired");
-	  });
-	  $scope.$on('mouseover', function(event, $content){
+	  $scope.showPlot = function(event, $content){
 	  	$(event.target).tooltip({
-	  		     show: {
-		        effect: "slideDown",
-		        delay: 250
-		    },
-	  		position: {
-	  			of: event
-	  		}
+	  		content: $content,
+	  		items: "article",
+	  		track: true
 	  	})
-	  });
+	  };
 	}
 	return homecontroller;
 });

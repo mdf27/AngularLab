@@ -1,0 +1,31 @@
+<div class="row">
+	<nav class="col-md-4">
+		<ul>
+			<a ui-sref="home"><li>Home |</li></a>
+			<li>Movies |</li>
+			<li>Help |</li>
+			<li>About Us |</li>
+			<li>contact</li>
+		</ul>
+	</nav>	
+	<div class="col-xs-3" id="search-wrapper">
+		<div class="search-input col-md-8">
+			<input type="text" name="search" class="form-control" ng-model="searchText" placeholder="Search...">
+		</div>	
+		<button ng-click="showBagContent($event)" class="col-md-1 btn btn-info"><span class="glyphicon glyphicon-shopping-cart"/></button>
+	</div>
+	<div class="bag col-md-4">
+			<table class="table">						
+					<thead>
+						<th>#</th>
+						<th>Movie Title</th>
+					</thead>
+					<tbody ng-repeat="item in items">
+						<tr>
+							<th>{{item.num}}</th>
+							<td>{{item.title}}</td>
+						</tr>							
+					</tbody>												
+			</table>
+	</div>					
+</div>

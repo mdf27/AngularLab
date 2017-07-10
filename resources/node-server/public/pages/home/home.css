@@ -86,7 +86,7 @@ nav {
 }
 
 nav ul{
-	top: 65%;
+	top: 44%;
 }
 img { 
  	height: 100%; 
@@ -119,9 +119,13 @@ a:focus:hover {
     background-color: #e3e2dd;
     max-height: 115px;
     overflow-y: scroll;
+    display: none;
 }
-.btn {
+.btn-primary {
 	display: block;
 	clear: both;
 }
-
+.btn {
+	height: 34px;
+	padding-right: 27px;
+}
