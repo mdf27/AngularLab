@@ -5,12 +5,8 @@ define([], function(){
 				$scope.movieDetails = result.data;
 		});	
 		$scope.addToBag = function (event) {
-			$scope.$emit('addToBag', $scope.movieDetails);
-			console.log("emit fired");
+			$scope.$emit('addToBag', $scope.movieDetails);			
 		}	
-		/*function addToBag() {
-			console.log("hello");
-		}*/
 	}
 	return movieDetailsController;
 });
